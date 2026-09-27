@@ -1,0 +1,27 @@
+name: AI 50K Daily Automation
+
+on:
+  schedule:
+    - cron: "0 0 * * *"
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  daily:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Generate daily campaign
+        env:
+          PRODUCT_URLS: ${{ secrets.PRODUCT_URLS }}
+        run: python3 .github/scripts/ai50k_daily.py
+      - name: Commit daily plan
+        run: |
+          git config user.name "AI 50K Bot"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add ai-50k/daily
+          git diff --cached --quiet || git commit -m "chore(ai-50k): refresh daily campaign"
+          git push
