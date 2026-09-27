@@ -1,0 +1,14 @@
+{
+  "date": "2026-09-27",
+  "target_vnd": 50000,
+  "status": "ready",
+  "note": "Doanh thu chỉ được ghi nhận khi có giao dịch/hoa hồng thực tế.",
+  "items": [
+    {
+      "type": "content",
+      "title": "Kế hoạch hôm nay: tạo 1 nội dung hữu ích + 1 ưu đãi thật để kéo khách",
+      "url": "",
+      "cta": "Bắt đầu"
+    }
+  ]
+}
