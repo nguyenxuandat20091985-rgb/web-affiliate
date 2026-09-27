@@ -22,7 +22,7 @@ input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;ba
 </style>
 </head>
 <body>
-<main class="wrap">
+<main class="wrap">\n<div id="campaigns"></div>
 <section class="hero">
 <div class="top"><div class="brand">🤖 AI 50K/ngày</div><div class="badge">PWA • Mobile</div></div>
 <div class="target"><div><div class="muted" style="color:#cbd5e1">Doanh thu đã xác minh hôm nay</div><div class="money" id="today">0đ</div></div><div class="goal">Mục tiêu<br><b>50.000đ</b></div></div>
@@ -127,6 +127,19 @@ document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{const v=
 document.querySelectorAll("[data-share]").forEach(b=>b.onclick=async()=>{const v=document.getElementById(b.dataset.share).value;if(navigator.share){try{await navigator.share({text:v})}catch{}}else{try{await navigator.clipboard.writeText(v);toast("Đã sao chép để anh đăng") }catch{toast("Hãy giữ vào ô nội dung để sao chép")}}});
 render();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
+</script>
+<script>
+(async()=>{
+  const el=document.getElementById('campaigns');
+  if(!el)return;
+  try{
+    const r=await fetch('./daily/latest.json?'+Date.now(),{cache:'no-store'});
+    if(!r.ok)throw new Error('daily unavailable');
+    const d=await r.json();
+    const items=(d.items||[]).map(x=>'<li><b>'+String(x.title||'').replace(/[<>]/g,'')+'</b>'+(x.url?' — <a href="'+x.url+'" target="_blank" rel="noopener">mở link</a>':'')+'</li>').join('');
+    el.innerHTML='<section class="card"><h2>🤖 Kế hoạch tự động hôm nay</h2><p>'+d.date+' · mục tiêu '+Number(d.target_vnd||50000).toLocaleString('vi-VN')+'đ</p><ul>'+items+'</ul><small>Chỉ ghi nhận doanh thu khi có giao dịch/hoa hồng thực tế.</small></section>';
+  }catch(e){}
+})();
 </script>
 </body>
 </html>
