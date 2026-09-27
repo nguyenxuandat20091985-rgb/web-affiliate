@@ -3,7 +3,13 @@ name: AI 50K Daily Automation
 on:
   schedule:
     - cron: "0 0 * * *"
+      # 00:00 UTC = 07:00 Vietnam time
   workflow_dispatch:
+    inputs:
+      reason:
+        description: "Run AI 50K campaign now"
+        required: false
+        default: "manual"
 
 permissions:
   contents: write
