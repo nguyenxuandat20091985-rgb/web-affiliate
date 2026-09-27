@@ -23,6 +23,7 @@ input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;ba
 </head>
 <body>
 <main class="wrap">\n<div id="campaigns"></div>
+<section class="section"><div class="card"><h2 style="margin-top:0">💰 Tiến độ kiếm tiền</h2><div class="grid" style="margin-top:8px"><div class="stat"><span class="muted">Đã xác nhận</span><b id="confirmed">0đ</b></div><div class="stat"><span class="muted">Còn thiếu</span><b id="remaining">50.000đ</b></div><div class="stat"><span class="muted">Sản phẩm</span><b id="productCount">0</b></div><div class="stat"><span class="muted">Link đã dùng</span><b id="linkClicks">0</b></div></div><div class="muted" style="margin-top:10px">Doanh thu chỉ tăng từ giao dịch/hoa hồng thật; lượt bấm chỉ là chỉ số quan tâm.</div></div></section>
 <section class="hero">
 <div class="top"><div class="brand">🤖 AI 50K/ngày</div><div class="badge">PWA • Mobile</div></div>
 <div class="target"><div><div class="muted" style="color:#cbd5e1">Doanh thu đã xác minh hôm nay</div><div class="money" id="today">0đ</div></div><div class="goal">Mục tiêu<br><b>50.000đ</b></div></div>
@@ -45,6 +46,7 @@ input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;ba
 <button class="action" data-task="service"><strong>🧰 Dịch vụ AI</strong><span>Gói nhỏ 50K–99K</span></button>
 </div></section>
 
+<section class="section"><h2>🛒 Sản phẩm của anh</h2><div id="products" class="list"></div></section>
 <section class="section"><h2>⚙️ Cài link bán hàng</h2>
 <div class="card">
 <div class="muted">Dán link affiliate hoặc link sản phẩm của anh. AI sẽ chèn vào nội dung bán hàng.</div>
@@ -75,12 +77,13 @@ input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;ba
 
 <script>
 const KEY="ai50k-v2";
-const initial={revenue:0,orders:0,commission:0,digital:0,opps:0,campaigns:[],transactions:[],sellLink:""};
+const initial={revenue:0,orders:0,commission:0,digital:0,opps:0,campaigns:[],transactions:[],sellLink:"",linkClicks:0};
 let state=JSON.parse(localStorage.getItem(KEY)||"null")||initial;
 const money=n=>new Intl.NumberFormat("vi-VN").format(n)+"đ";
 function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
 function toast(s){const e=document.getElementById("toast");e.textContent=s;e.style.display="block";clearTimeout(window.__t);window.__t=setTimeout(()=>e.style.display="none",2200)}
-function link(){return state.sellLink||"[DÁN LINK SẢN PHẨM/AFFILIATE VÀO PHẦN CÀI ĐẶT]"}
+function link(){return state.sellLink||"[CHỌN SẢN PHẨM BÊN DƯỚI]"}
+window.useProduct=(i)=>{const p=window.__products?.[i];if(!p)return;state.sellLink=p.url;state.linkClicks=(state.linkClicks||0)+1;save();toast("Đã chọn: "+p.name);window.open(p.url,"_blank","noopener");};
 function generate(){
  const l=link();
  document.getElementById("post1").value="🔥 GỢI Ý HÔM NAY\n\nNếu anh/chị đang cần một sản phẩm tiện dụng, đây là lựa chọn đáng xem. Hãy xem thông tin, giá và đánh giá trước khi mua:\n"+l+"\n\n#goiy #sanpham #deal";
@@ -89,12 +92,18 @@ function generate(){
 }
 function render(){
  document.getElementById("today").textContent=money(state.revenue);
+ document.getElementById("confirmed").textContent=money(state.revenue);
+ document.getElementById("remaining").textContent=money(Math.max(0,50000-state.revenue));
+ document.getElementById("linkClicks").textContent=state.linkClicks||0;
  document.getElementById("orders").textContent=state.orders;
  document.getElementById("commission").textContent=money(state.commission);
  document.getElementById("digital").textContent=state.digital;
  document.getElementById("opps").textContent=state.opps;
  document.getElementById("fill").style.width=Math.min(100,state.revenue/50000*100)+"%";
  document.getElementById("sellLink").value=state.sellLink;
+ document.getElementById("productCount").textContent=window.__products?.length||0;
+ const pc=document.getElementById("products");
+ pc.innerHTML=(window.__products||[]).map((x,i)=>`<div class="row"><div><b>${x.name}</b><div class="muted">${i+1}/${window.__products.length}</div></div><button class="mini go" style="flex:0 0 auto" onclick="useProduct(${i})">Mở</button></div>`).join("") || `<div class="card empty">Đang tải danh sách sản phẩm…</div>`;
  const c=document.getElementById("campaigns");
  c.innerHTML=state.campaigns.length?state.campaigns.map(x=>'<div class="row"><div><b>'+x.title+'</b><div class="muted">'+x.detail+'</div></div><span class="tag">'+x.type+'</span></div>').join(""):'<div class="card empty">Bấm “Chạy AI” để tạo bộ việc hôm nay.</div>';
  const t=document.getElementById("transactions");
@@ -130,6 +139,8 @@ if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").cat
 </script>
 <script>
 (async()=>{
+  try{const pr=await fetch("./products.json?"+Date.now(),{cache:"no-store"}); if(pr.ok){const d=await pr.json();window.__products=d.products||[];render();}}catch(e){};
+  
   const el=document.getElementById('campaigns');
   if(!el)return;
   try{
