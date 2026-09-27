@@ -2,13 +2,67 @@
   "date": "2026-09-27",
   "target_vnd": 50000,
   "status": "ready",
-  "note": "Doanh thu chỉ được ghi nhận khi có giao dịch/hoa hồng thực tế.",
+  "note": "AI đang chạy theo catalog sản phẩm. Doanh thu chỉ ghi nhận khi có giao dịch/hoa hồng thực tế.",
   "items": [
     {
-      "type": "content",
-      "title": "Kế hoạch hôm nay: tạo 1 nội dung hữu ích + 1 ưu đãi thật để kéo khách",
-      "url": "",
-      "cta": "Bắt đầu"
+      "type": "affiliate",
+      "title": "Nồi chiên không dầu",
+      "url": "https://shorten.asia/epmrd8Bx",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Máy ép hoa quả",
+      "url": "https://shorten.asia/wkSRMcmS",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "MB BANK iOS",
+      "url": "https://shorten.asia/UngWPa85",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Máy ép đa năng",
+      "url": "https://shorten.asia/Ru9YGqZ6",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Bơm ô tô xe máy",
+      "url": "https://shorten.asia/UH5cYcwc",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Máy tính bền",
+      "url": "https://shorten.asia/uvMfrBGM",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Tin vay, vay siêu tốc",
+      "url": "https://shorten.asia/261nhWpK",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Năn khử mùi",
+      "url": "https://shorten.asia/Tc8MAZnS",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Kem đánh răng",
+      "url": "https://shorten.asia/eZqcGeTc",
+      "cta": "Xem sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Viên tinh bột nghệ mật ong",
+      "url": "https://shorten.asia/nsgTXs8M",
+      "cta": "Xem sản phẩm"
     }
   ]
 }
