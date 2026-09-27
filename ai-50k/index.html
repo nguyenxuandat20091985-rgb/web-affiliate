@@ -4,17 +4,20 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
 <meta name="theme-color" content="#0f172a">
-<meta name="description" content="AI 50K/ngày – trung tâm tạo cơ hội kiếm tiền thật từ nội dung, affiliate, sản phẩm số và dịch vụ AI.">
+<meta name="description" content="AI 50K/ngày – trợ lý tạo nhiệm vụ kiếm tiền thật từ nội dung, affiliate, sản phẩm số và dịch vụ AI.">
 <link rel="manifest" href="./manifest.webmanifest">
 <title>AI 50K/ngày</title>
 <style>
 :root{--bg:#f5f7fb;--card:#fff;--ink:#0f172a;--muted:#64748b;--line:#e2e8f0;--accent:#2563eb;--accent2:#7c3aed;--ok:#059669;--warn:#d97706}
 *{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.5 system-ui,-apple-system,Segoe UI,Roboto,sans-serif}
-button,input,select,textarea{font:inherit}.wrap{max-width:760px;margin:auto;padding:16px 16px 92px}
-.hero{background:linear-gradient(135deg,#0f172a,#312e81);color:#fff;border-radius:26px;padding:22px;box-shadow:0 16px 40px #0f172a20}
+button,input,textarea{font:inherit}.wrap{max-width:760px;margin:auto;padding:16px 16px 100px}.hero{background:linear-gradient(135deg,#0f172a,#312e81);color:#fff;border-radius:26px;padding:22px;box-shadow:0 16px 40px #0f172a20}
 .top{display:flex;justify-content:space-between;align-items:center;gap:12px}.brand{font-weight:800;font-size:20px}.badge{background:#ffffff18;border:1px solid #ffffff30;padding:6px 10px;border-radius:999px;font-size:12px}
 .target{margin-top:22px;display:flex;justify-content:space-between;align-items:end}.money{font-size:38px;font-weight:850;letter-spacing:-1px}.goal{color:#cbd5e1}.bar{height:11px;background:#ffffff1f;border-radius:99px;overflow:hidden;margin-top:14px}.fill{height:100%;width:0;background:linear-gradient(90deg,#34d399,#60a5fa);transition:.3s}
-.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}.stat b{font-size:22px;display:block}.muted{color:var(--muted);font-size:13px}.section{margin-top:22px}.section h2{font-size:17px;margin:0 0 10px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.action{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;text-align:left;cursor:pointer}.action strong{display:block}.action span{color:var(--muted);font-size:12px}.primary{width:100%;border:0;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:17px;padding:15px;font-weight:800;cursor:pointer;margin-top:12px}.list{display:grid;gap:9px}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:14px;background:#fff}.row .tag{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef2ff;color:#3730a3}.positive{color:var(--ok);font-weight:750}.empty{text-align:center;color:var(--muted);padding:18px}.bottom{position:fixed;left:0;right:0;bottom:0;background:#ffffffee;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px calc(12px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left));display:flex;justify-content:center;z-index:5}.bottom-inner{width:min(728px,100%);display:flex;gap:7px}.nav{flex:1;border:0;background:transparent;padding:8px 4px;color:var(--muted);font-size:11px}.nav.active{color:var(--accent);font-weight:800}.toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);background:#0f172a;color:#fff;padding:11px 15px;border-radius:12px;display:none;z-index:10;max-width:90%}
+.grid{display:grid;grid-template-columns:repeat(2,1fr);gap:12px;margin-top:14px}.card{background:var(--card);border:1px solid var(--line);border-radius:18px;padding:16px}.stat b{font-size:22px;display:block}.muted{color:var(--muted);font-size:13px}.section{margin-top:22px}.section h2{font-size:17px;margin:0 0 10px}.actions{display:grid;grid-template-columns:1fr 1fr;gap:10px}.action{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px;text-align:left;cursor:pointer}.action strong{display:block}.action span{color:var(--muted);font-size:12px}.primary{width:100%;border:0;background:linear-gradient(135deg,var(--accent),var(--accent2));color:#fff;border-radius:17px;padding:15px;font-weight:800;cursor:pointer;margin-top:12px}
+.list{display:grid;gap:9px}.row{display:flex;justify-content:space-between;gap:12px;align-items:center;padding:13px;border:1px solid var(--line);border-radius:14px;background:#fff}.row .tag{font-size:11px;padding:4px 8px;border-radius:999px;background:#eef2ff;color:#3730a3}.positive{color:var(--ok);font-weight:750}.empty{text-align:center;color:var(--muted);padding:18px}
+.tools{display:grid;gap:10px}.tool{border:1px solid var(--line);background:#fff;border-radius:16px;padding:14px}.tool h3{margin:0 0 6px;font-size:15px}.tool textarea{width:100%;min-height:120px;border:1px solid var(--line);border-radius:12px;padding:11px;resize:vertical}.mini{display:flex;gap:8px;margin-top:8px}.mini button{flex:1;border:1px solid var(--line);background:#fff;border-radius:11px;padding:9px;cursor:pointer}.mini .go{background:#eef2ff;color:#3730a3;font-weight:700}
+input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;background:#fff}.save{margin-top:8px;width:100%;border:0;background:#0f172a;color:#fff;border-radius:11px;padding:11px;font-weight:700}
+.bottom{position:fixed;left:0;right:0;bottom:0;background:#ffffffee;backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px calc(12px + env(safe-area-inset-right)) calc(10px + env(safe-area-inset-bottom)) calc(12px + env(safe-area-inset-left));display:flex;justify-content:center;z-index:5}.bottom-inner{width:min(728px,100%);display:flex;gap:7px}.nav{flex:1;border:0;background:transparent;padding:8px 4px;color:var(--muted);font-size:11px}.nav.active{color:var(--accent);font-weight:800}.toast{position:fixed;left:50%;bottom:78px;transform:translateX(-50%);background:#0f172a;color:#fff;padding:11px 15px;border-radius:12px;display:none;z-index:10;max-width:90%}
 @media(min-width:650px){.grid{grid-template-columns:repeat(4,1fr)}.actions{grid-template-columns:repeat(4,1fr)}}
 </style>
 </head>
@@ -22,43 +25,68 @@ button,input,select,textarea{font:inherit}.wrap{max-width:760px;margin:auto;padd
 <main class="wrap">
 <section class="hero">
 <div class="top"><div class="brand">🤖 AI 50K/ngày</div><div class="badge">PWA • Mobile</div></div>
-<div class="target"><div><div class="muted" style="color:#cbd5e1">Doanh thu hôm nay</div><div class="money" id="today">0đ</div></div><div class="goal">Mục tiêu<br><b>50.000đ</b></div></div>
+<div class="target"><div><div class="muted" style="color:#cbd5e1">Doanh thu đã xác minh hôm nay</div><div class="money" id="today">0đ</div></div><div class="goal">Mục tiêu<br><b>50.000đ</b></div></div>
 <div class="bar"><div class="fill" id="fill"></div></div>
-<button class="primary" id="run">⚡ Chạy AI tìm cơ hội hôm nay</button>
+<button class="primary" id="run">⚡ Chạy AI tạo việc kiếm tiền hôm nay</button>
 </section>
 
 <section class="grid">
 <div class="card stat"><span class="muted">Đơn hàng</span><b id="orders">0</b></div>
 <div class="card stat"><span class="muted">Hoa hồng</span><b id="commission">0đ</b></div>
 <div class="card stat"><span class="muted">Sản phẩm số</span><b id="digital">0</b></div>
-<div class="card stat"><span class="muted">Cơ hội AI</span><b id="opps">0</b></div>
+<div class="card stat"><span class="muted">Cơ hội</span><b id="opps">0</b></div>
 </section>
 
-<section class="section"><h2>🚀 Việc AI có thể làm</h2>
+<section class="section"><h2>🎯 4 đường kiếm tiền</h2>
 <div class="actions">
-<button class="action" data-task="deal"><strong>🛒 Săn deal</strong><span>Gợi ý sản phẩm có tiềm năng</span></button>
-<button class="action" data-task="content"><strong>✍️ Viết bài</strong><span>Tạo nội dung bán hàng</span></button>
-<button class="action" data-task="product"><strong>📦 Sản phẩm số</strong><span>Ý tưởng ebook/checklist/prompt</span></button>
-<button class="action" data-task="service"><strong>🧰 Dịch vụ AI</strong><span>Tạo gói dịch vụ nhỏ</span></button>
+<button class="action" data-task="deal"><strong>🛒 Affiliate</strong><span>Chọn sản phẩm + nội dung bán</span></button>
+<button class="action" data-task="content"><strong>✍️ Nội dung</strong><span>Tạo bài đăng có CTA</span></button>
+<button class="action" data-task="product"><strong>📦 Sản phẩm số</strong><span>Checklist/template/prompt</span></button>
+<button class="action" data-task="service"><strong>🧰 Dịch vụ AI</strong><span>Gói nhỏ 50K–99K</span></button>
 </div></section>
 
-<section class="section"><h2>🎯 Chiến dịch hôm nay</h2><div id="campaigns" class="list"></div></section>
-<section class="section"><h2>💰 Doanh thu thật</h2><div id="transactions" class="list"></div></section>
-<section class="section"><h2>🛡️ An toàn tiền</h2><div class="card"><b>AI không tự rút/chuyển tiền.</b><p class="muted">Chỉ ghi nhận giao dịch đã xác minh. Không hiển thị doanh thu giả và không tự động thao tác tài khoản tài chính.</p></div></section>
+<section class="section"><h2>⚙️ Cài link bán hàng</h2>
+<div class="card">
+<div class="muted">Dán link affiliate hoặc link sản phẩm của anh. AI sẽ chèn vào nội dung bán hàng.</div>
+<input id="sellLink" placeholder="https://...">
+<button class="save" id="saveLink">Lưu link</button>
+</div></section>
+
+<section class="section"><h2>🧠 Bộ máy AI hôm nay</h2><div id="campaigns" class="list"></div></section>
+
+<section class="section"><h2>📣 Nội dung sẵn sàng đăng</h2>
+<div class="tools">
+<div class="tool"><h3>1. Bài bán hàng ngắn</h3><textarea id="post1" readonly></textarea><div class="mini"><button class="go" data-copy="post1">📋 Sao chép</button><button data-share="post1">📤 Chia sẻ</button></div></div>
+<div class="tool"><h3>2. Bài giải quyết vấn đề</h3><textarea id="post2" readonly></textarea><div class="mini"><button class="go" data-copy="post2">📋 Sao chép</button><button data-share="post2">📤 Chia sẻ</button></div></div>
+<div class="tool"><h3>3. Chào bán dịch vụ AI 50K</h3><textarea id="post3" readonly></textarea><div class="mini"><button class="go" data-copy="post3">📋 Sao chép</button><button data-share="post3">📤 Chia sẻ</button></div></div>
+</div></section>
+
+<section class="section"><h2>💰 Doanh thu thật</h2><div id="transactions" class="list"></div>
+<div class="card" style="margin-top:10px"><b>➕ Ghi nhận 1 giao dịch đã nhận tiền</b><div class="muted">Chỉ nhập khi tiền/hoa hồng đã thực sự về tài khoản.</div><div class="mini"><input id="amount" inputmode="numeric" placeholder="Số tiền, ví dụ 50000"><button class="go" id="addRevenue">Ghi nhận</button></div></div>
+</section>
+
+<section class="section"><h2>🛡️ Nguyên tắc</h2><div class="card"><b>Không doanh thu ảo • Không tự rút/chuyển tiền.</b><p class="muted">AI tạo việc, nội dung và theo dõi số liệu. Việc thanh toán/nhận tiền vẫn phải qua kênh thật của anh.</p></div></section>
 </main>
 
 <div class="toast" id="toast"></div>
 <nav class="bottom"><div class="bottom-inner">
-<button class="nav active">🏠<br>Tổng quan</button><button class="nav">🤖<br>AI</button><button class="nav">📦<br>Sản phẩm</button><button class="nav">💰<br>Doanh thu</button><button class="nav">⚙️<br>Cài đặt</button>
+<button class="nav active">🏠<br>Tổng quan</button><button class="nav">🤖 AI</button><button class="nav">📣 Nội dung</button><button class="nav">💰 Tiền</button><button class="nav">⚙️ Cài đặt</button>
 </div></nav>
 
 <script>
-const KEY="ai50k-demo-v1";
-const initial={revenue:0,orders:0,commission:0,digital:0,opps:0,campaigns:[],transactions:[]};
+const KEY="ai50k-v2";
+const initial={revenue:0,orders:0,commission:0,digital:0,opps:0,campaigns:[],transactions:[],sellLink:""};
 let state=JSON.parse(localStorage.getItem(KEY)||"null")||initial;
 const money=n=>new Intl.NumberFormat("vi-VN").format(n)+"đ";
 function save(){localStorage.setItem(KEY,JSON.stringify(state));render()}
 function toast(s){const e=document.getElementById("toast");e.textContent=s;e.style.display="block";clearTimeout(window.__t);window.__t=setTimeout(()=>e.style.display="none",2200)}
+function link(){return state.sellLink||"[DÁN LINK SẢN PHẨM/AFFILIATE VÀO PHẦN CÀI ĐẶT]"}
+function generate(){
+ const l=link();
+ document.getElementById("post1").value="🔥 GỢI Ý HÔM NAY\n\nNếu anh/chị đang cần một sản phẩm tiện dụng, đây là lựa chọn đáng xem. Hãy xem thông tin, giá và đánh giá trước khi mua:\n"+l+"\n\n#goiy #sanpham #deal";
+ document.getElementById("post2").value="💡 MẸO TIẾT KIỆM\n\nĐừng chỉ nhìn giá. Hãy kiểm tra 3 thứ: đánh giá thật, chính sách đổi trả và nhu cầu sử dụng. Nếu sản phẩm phù hợp với nhu cầu của bạn, xem chi tiết tại:\n"+l+"\n\nNội dung nhằm cung cấp thông tin; hãy tự kiểm tra giá trước khi đặt.";
+ document.getElementById("post3").value="🤖 NHẬN LÀM DỊCH VỤ AI 50K\n\nTôi nhận: viết caption, mô tả sản phẩm, chỉnh CV, tạo checklist hoặc prompt theo yêu cầu. Giá từ 50.000đ/gói nhỏ. Gửi yêu cầu để nhận mẫu trước.\n\nLiên hệ trực tiếp qua kênh bạn đang đăng bài.";
+}
 function render(){
  document.getElementById("today").textContent=money(state.revenue);
  document.getElementById("orders").textContent=state.orders;
@@ -66,22 +94,37 @@ function render(){
  document.getElementById("digital").textContent=state.digital;
  document.getElementById("opps").textContent=state.opps;
  document.getElementById("fill").style.width=Math.min(100,state.revenue/50000*100)+"%";
- const c=document.getElementById("campaigns"); c.innerHTML=state.campaigns.length?state.campaigns.map(x=>'<div class="row"><div><b>'+x.title+'</b><div class="muted">'+x.detail+'</div></div><span class="tag">'+x.type+'</span></div>').join(""):'<div class="card empty">Chưa có chiến dịch. Bấm “Chạy AI” để tạo kế hoạch mẫu.</div>';
- const t=document.getElementById("transactions"); t.innerHTML=state.transactions.length?state.transactions.map(x=>'<div class="row"><div><b>'+x.note+'</b><div class="muted">'+x.time+'</div></div><span class="positive">+'+money(x.amount)+'</span></div>').join(""):'<div class="card empty">Chưa có giao dịch xác minh.</div>';
+ document.getElementById("sellLink").value=state.sellLink;
+ const c=document.getElementById("campaigns");
+ c.innerHTML=state.campaigns.length?state.campaigns.map(x=>'<div class="row"><div><b>'+x.title+'</b><div class="muted">'+x.detail+'</div></div><span class="tag">'+x.type+'</span></div>').join(""):'<div class="card empty">Bấm “Chạy AI” để tạo bộ việc hôm nay.</div>';
+ const t=document.getElementById("transactions");
+ t.innerHTML=state.transactions.length?state.transactions.map(x=>'<div class="row"><div><b>'+x.note+'</b><div class="muted">'+x.time+'</div></div><span class="positive">+'+money(x.amount)+'</span></div>').join(""):'<div class="card empty">Chưa có giao dịch xác minh.</div>';
+ generate();
 }
 document.getElementById("run").onclick=()=>{
  state.opps+=4;
  state.campaigns=[
- {title:"Nội dung giải quyết một vấn đề cụ thể",detail:"Tạo 3 bài hữu ích, mỗi bài gắn một lời mời mua minh bạch.",type:"CONTENT"},
- {title:"Một sản phẩm số giá thấp",detail:"Tạo checklist/template giải quyết nhu cầu rõ ràng; mục tiêu 1 đơn 49K.",type:"DIGITAL"},
- {title:"Một dịch vụ AI nhỏ",detail:"Đề xuất gói 50K–99K, giao kết quả nhanh trong ngày.",type:"SERVICE"}
+ {title:"Affiliate: chọn 1 sản phẩm dễ giải thích",detail:"Tạo 2 bài review hữu ích + 1 CTA, chỉ dùng link affiliate thật.",type:"AFFILIATE"},
+ {title:"Sản phẩm số giá thấp",detail:"Tạo checklist/template giải quyết một vấn đề cụ thể và bán trực tiếp.",type:"DIGITAL"},
+ {title:"Dịch vụ AI 50K",detail:"Mở 3 suất làm caption/CV/checklist/prompt trong ngày.",type:"SERVICE"},
+ {title:"Nội dung kéo khách",detail:"Đăng 3 nội dung khác góc nhìn và trả lời bình luận để chốt nhu cầu.",type:"CONTENT"}
  ];
- save(); toast("AI đã tạo 3 hướng kiếm tiền. Đây là kế hoạch, chưa phải doanh thu.");
+ generate(); save(); toast("AI đã tạo bộ việc hôm nay. Doanh thu chỉ tăng khi anh ghi nhận tiền thật.");
 };
 document.querySelectorAll("[data-task]").forEach(b=>b.onclick=()=>{
- const names={deal:"Săn deal",content:"Viết bài",product:"Sản phẩm số",service:"Dịch vụ AI"};
- state.opps++; state.campaigns.unshift({title:names[b.dataset.task]+" – nhiệm vụ mới",detail:"AI chuẩn bị ý tưởng; cần dữ liệu/đơn hàng thật trước khi ghi doanh thu.",type:b.dataset.task.toUpperCase()}); save(); toast("Đã thêm nhiệm vụ "+names[b.dataset.task]);
+ const names={deal:"Affiliate",content:"Nội dung",product:"Sản phẩm số",service:"Dịch vụ AI"};
+ state.opps++;
+ state.campaigns.unshift({title:names[b.dataset.task]+" – nhiệm vụ mới",detail:"Tạo và đăng ngay; cần đơn hàng/thanh toán thật trước khi ghi doanh thu.",type:b.dataset.task.toUpperCase()});
+ generate(); save(); toast("Đã tạo nhiệm vụ "+names[b.dataset.task]);
 });
+document.getElementById("saveLink").onclick=()=>{state.sellLink=document.getElementById("sellLink").value.trim();save();toast("Đã lưu link bán hàng");};
+document.getElementById("addRevenue").onclick=()=>{
+ const n=Number(String(document.getElementById("amount").value).replace(/[^0-9]/g,""));
+ if(!n){toast("Nhập số tiền đã nhận thật");return}
+ state.revenue+=n; state.orders++; state.commission+=n; state.transactions.unshift({amount:n,note:"Giao dịch đã xác minh thủ công",time:new Date().toLocaleString("vi-VN")}); document.getElementById("amount").value=""; save(); toast("Đã ghi nhận doanh thu thật");
+};
+document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{const v=document.getElementById(b.dataset.copy).value;try{await navigator.clipboard.writeText(v);toast("Đã sao chép");}catch{toast("Không thể tự sao chép trên trình duyệt này");}});
+document.querySelectorAll("[data-share]").forEach(b=>b.onclick=async()=>{const v=document.getElementById(b.dataset.share).value;if(navigator.share){try{await navigator.share({text:v})}catch{}}else{try{await navigator.clipboard.writeText(v);toast("Đã sao chép để anh đăng") }catch{toast("Hãy giữ vào ô nội dung để sao chép")}}});
 render();
 if("serviceWorker" in navigator) navigator.serviceWorker.register("./sw.js").catch(()=>{});
 </script>
