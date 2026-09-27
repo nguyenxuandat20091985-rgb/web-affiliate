@@ -17,6 +17,7 @@ jobs:
       - name: Generate daily campaign
         env:
           PRODUCT_URLS: ${{ secrets.PRODUCT_URLS }}
+          ACCESSTRADE_API_KEY: ${{ secrets.ACCESSTRADE_API_KEY }}
         run: python3 .github/scripts/ai50k_daily.py
       - name: Commit daily plan
         run: |
