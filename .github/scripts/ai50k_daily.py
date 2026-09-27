@@ -4,6 +4,13 @@ import urllib.request
 
 TODAY=datetime.now(timezone.utc).strftime("%Y-%m-%d")
 products=[p.strip() for p in os.getenv("PRODUCT_URLS","").split(",") if p.strip()]
+if not products:
+    try:
+        with open("ai-50k/products.json",encoding="utf-8") as fh:
+            catalog=json.load(fh).get("products",[])
+            products=[p.get("url","").strip() for p in catalog if p.get("url")]
+    except Exception:
+        products=[]
 token=os.getenv("ACCESSTRADE_API_KEY","").strip()
 
 def affiliate_link(url):
