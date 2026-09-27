@@ -22,7 +22,7 @@ input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;ba
 </style>
 </head>
 <body>
-<main class="wrap">\n<div id="campaigns"></div>
+<main class="wrap">
 <section class="section"><div class="card"><h2 style="margin-top:0">💰 Tiến độ kiếm tiền</h2><div class="grid" style="margin-top:8px"><div class="stat"><span class="muted">Đã xác nhận</span><b id="confirmed">0đ</b></div><div class="stat"><span class="muted">Còn thiếu</span><b id="remaining">50.000đ</b></div><div class="stat"><span class="muted">Sản phẩm</span><b id="productCount">0</b></div><div class="stat"><span class="muted">Link đã dùng</span><b id="linkClicks">0</b></div></div><div class="muted" style="margin-top:10px">Doanh thu chỉ tăng từ giao dịch/hoa hồng thật; lượt bấm chỉ là chỉ số quan tâm.</div></div></section>
 <section class="hero">
 <div class="top"><div class="brand">🤖 AI 50K/ngày</div><div class="badge">PWA • Mobile</div></div>
@@ -64,7 +64,7 @@ input{width:100%;border:1px solid var(--line);border-radius:11px;padding:11px;ba
 </div></section>
 
 <section class="section"><h2>💰 Doanh thu thật</h2><div id="transactions" class="list"></div>
-<div class="card" style="margin-top:10px"><b>➕ Ghi nhận 1 giao dịch đã nhận tiền</b><div class="muted">Chỉ nhập khi tiền/hoa hồng đã thực sự về tài khoản.</div><div class="mini"><input id="amount" inputmode="numeric" placeholder="Số tiền, ví dụ 50000"><button class="go" id="addRevenue">Ghi nhận</button></div></div>
+<div class="card" style="margin-top:10px"><b>➕ Ghi nhận tiền đã thực nhận</b><div class="muted">Đây là sổ theo dõi do anh nhập. AI không gọi đây là doanh thu đã xác minh từ đối tác nếu chưa có bằng chứng/đối soát.</div><div class="mini"><input id="amount" inputmode="numeric" placeholder="Số tiền đã nhận, ví dụ 50000"><button class="go" id="addRevenue">Ghi nhận</button></div></div>
 </section>
 
 <section class="section"><h2>🛡️ Nguyên tắc</h2><div class="card"><b>Không doanh thu ảo • Không tự rút/chuyển tiền.</b><p class="muted">AI tạo việc, nội dung và theo dõi số liệu. Việc thanh toán/nhận tiền vẫn phải qua kênh thật của anh.</p></div></section>
@@ -130,7 +130,7 @@ document.getElementById("saveLink").onclick=()=>{state.sellLink=document.getElem
 document.getElementById("addRevenue").onclick=()=>{
  const n=Number(String(document.getElementById("amount").value).replace(/[^0-9]/g,""));
  if(!n){toast("Nhập số tiền đã nhận thật");return}
- state.revenue+=n; state.orders++; state.commission+=n; state.transactions.unshift({amount:n,note:"Giao dịch đã xác minh thủ công",time:new Date().toLocaleString("vi-VN")}); document.getElementById("amount").value=""; save(); toast("Đã ghi nhận doanh thu thật");
+ state.revenue+=n; state.orders++; state.commission+=n; state.transactions.unshift({amount:n,note:"Tiền thực nhận – nhập thủ công",time:new Date().toLocaleString("vi-VN")}); document.getElementById("amount").value=""; save(); toast("Đã ghi nhận tiền thực nhận");
 };
 document.querySelectorAll("[data-copy]").forEach(b=>b.onclick=async()=>{const v=document.getElementById(b.dataset.copy).value;try{await navigator.clipboard.writeText(v);toast("Đã sao chép");}catch{toast("Không thể tự sao chép trên trình duyệt này");}});
 document.querySelectorAll("[data-share]").forEach(b=>b.onclick=async()=>{const v=document.getElementById(b.dataset.share).value;if(navigator.share){try{await navigator.share({text:v})}catch{}}else{try{await navigator.clipboard.writeText(v);toast("Đã sao chép để anh đăng") }catch{toast("Hãy giữ vào ô nội dung để sao chép")}}});
