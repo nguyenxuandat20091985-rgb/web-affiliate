@@ -1,0 +1,68 @@
+{
+  "date": "2026-10-19",
+  "target_vnd": 50000,
+  "status": "ready",
+  "note": "Doanh thu chỉ được ghi nhận khi có giao dịch/hoa hồng thực tế.",
+  "items": [
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #1",
+      "url": "https://shorten.asia/epmrd8Bx",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #2",
+      "url": "https://shorten.asia/wkSRMcmS",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #3",
+      "url": "https://shorten.asia/UngWPa85",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #4",
+      "url": "https://shorten.asia/Ru9YGqZ6",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #5",
+      "url": "https://shorten.asia/UH5cYcwc",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #6",
+      "url": "https://shorten.asia/uvMfrBGM",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #7",
+      "url": "https://shorten.asia/261nhWpK",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #8",
+      "url": "https://shorten.asia/Tc8MAZnS",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #9",
+      "url": "https://shorten.asia/eZqcGeTc",
+      "cta": "Xem giá và thông tin sản phẩm"
+    },
+    {
+      "type": "affiliate",
+      "title": "Deal đáng xem #10",
+      "url": "https://shorten.asia/nsgTXs8M",
+      "cta": "Xem giá và thông tin sản phẩm"
+    }
+  ]
+}
